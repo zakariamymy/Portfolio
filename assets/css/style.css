@@ -1,0 +1,244 @@
+/*style.css*/
+/* Importer depuis fonts.google.com */
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
+
+
+/* L'utilisation de variables CSS personnalisées */
+:root {
+    --color-body: #b6cbce;/* Couleur du corps de la page */
+    --color-heading: #eef3db;/* Couleur des en-têtes */
+    --color-base: #0000ff;/* Couleur de base */
+    --color-base2: #000080;/* Deuxième couleur de base */
+    --color-brand: #FF0000;/* Couleur de photo*/
+    --color-brand2: #e5ff00;/* Deuxième couleur de marque */
+    --sidbar-width: 240px;/* Largeur de la barre latérale */
+    --font-base: "Bai Jamjuree";/* Police de base */
+}
+
+body {
+    background-color: var(--color-base2);/* Couleur de fond du corps de la page */
+    color: var(--color-body);/* Couleur du texte principal */
+    font-family: var(--font-base), sans-serif; /* Police de caractères */
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: var(--color-heading);/* Couleur des en-têtes */
+    font-weight: 700;/* Graisse de la police */
+}
+
+a {
+    text-decoration: none;/* Supprimer la décoration de lien */
+    color: var(--color-body);/* Couleur du texte de lien */
+    transition: all 0.4s ease;/* Transition pour le survol des liens */
+}
+
+a:hover {
+    color: var(--color-brand);/* Couleur du texte de lien au survol */
+}
+
+img {
+    width: 100%;/* Largeur des images à 100% */
+}
+
+.text-brand {
+    color: var(--color-brand);/* Couleur de la marque */
+}
+
+.bg-base {
+    background-color: var(--color-base);/* Couleur de fond de base */
+}
+
+.full-height {
+    /* Styles pour une div avec une hauteur minimale de 100vh, centrage vertical et autres styles */
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-bottom: 2px solid rgba(255,255,255, 0.1); /* Bordure inférieure */
+}
+
+.shadow-effect {
+    transition: all 0.5s;/* Transition pour l'effet d'ombre au survol */
+}
+
+.shadow-effect:hover {
+    box-shadow: -6px 6px 0 0 var(--color-brand); /* Ombre au survol */
+}
+
+.iconbox {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    background-color: var(--color-brand); /* Couleur de fond de l'icône */
+    color: var(--color-base);/* Couleur du texte de l'icône */
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: var(--color-base);/* Couleur de fond de la barre de navigation */
+}
+
+.navbar .nav-link {
+    font-weight: 700;/* Graisse de la police pour les liens de la barre de navigation */
+    text-transform: uppercase;/* Mettre en majuscules le texte des liens */
+    color: #fff;/* Couleur du texte des liens */
+}
+.navbar .nav-link:hover {
+    color: var(--color-brand);/* Couleur du texte des liens au survol */
+}
+
+.navbar .nav-link.active {
+    color: var(--color-brand);/* Couleur du texte des liens actifs */
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        /* Styles spécifiques pour les écrans de taille supérieure à 992px */
+        min-height: 100vh;
+        width: var(--sidbar-width);
+        background: linear-gradient(rgba(44, 20, 82, 0.8), rgba(31, 33, 71, 0.8)), url(../images/dark-forest.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .navbar-brand img {
+        border: 8px solid var(--color-brand); /* Bordure autour de l'image de la marque */
+    }
+
+    /* Styles pour ajuster le contenu principal en fonction de la barre latérale */
+    #content-wrapper {
+        padding-left: var(--sidbar-width);
+    }
+}
+
+/* BTN */
+.btn {
+    padding: 12px 28px;/* Rembourrage pour les boutons */
+    font-weight: 700;/* Graisse de la police */
+}
+
+.btn-brand {
+    background-color: var(--color-brand);/* Couleur d'arrière-plan des boutons de marque */
+    border-color: var(--color-brand);/* Couleur de la bordure des boutons de marque */
+    color: var(--color-base); /* Couleur du texte des boutons de marque */
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+    /* Styles pour les boutons de marque au survol ou au focus */
+    background-color: var(--color-brand2); /* Couleur d'arrière-plan au survol/focus */
+    color: var(--color-base);/* Couleur du texte au survol/focus */
+    border-color: var(--color-brand2);/* Couleur de la bordure au survol/focus */
+}
+
+.link-custom {
+    font-weight: 700;/* Graisse de la police pour les liens personnalisés */
+    position: relative;/* Position relative pour les liens personnalisés */
+}
+
+.link-custom::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-brand);/* Couleur de la ligne en dessous des liens personnalisés */
+    position: absolute;
+    left: 0;
+    top: 110%;
+    transition: all 0.4s;/* Transition pour l'animation de la ligne */
+}
+
+.link-custom:hover::after {
+    /* Animation pour les liens personnalisés au survol */
+    width: 100%;                            /* Largeur de la ligne au survol */
+}
+
+/* CARD */
+.card-custom {
+    margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+.card-custom .card-custom-image {
+    overflow: hidden;/* Masquer le débordement des images de carte */
+}
+
+.card-custom .card-custom-image img {
+    transition: all 0.4s ease;/* Transition pour l'effet de zoom au survol des images */
+    transform: scale(1.1);
+}
+
+.card-custom:hover .card-custom-image img {
+    /* Effet de zoom sur la carte au survol */
+    transform: scale(1.1);
+}
+
+/* CONTACT */
+#contact .form-control {
+    background-color: var(--color-base);/* Couleur de fond pour les zones de texte de contact */
+    border-color: var(--color-base);/* Couleur de la bordure pour les zones de texte de contact */
+    color: var(--color-body);/* Couleur du texte principal pour les zones de texte de contact */
+}
+
+#contact .form-control:focus {
+    border-color: var(--color-brand); /* Couleur de la bordure lorsque la zone de texte de contact est active */
+    box-shadow: none;/* Supprimer la boîte d'ombre */
+}
+
+#contact .form-control::placeholder {
+    color: var(--color-body);/* Couleur du texte de l'attribut placeholder */
+}
+
+#contact input.form-control {
+    height: 44px;/* Hauteur des champs de saisie de contact */
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-base);/* Couleur de fond pour les icônes sociales */
+    border-radius: 100px;/* Bordure arrondie pour les icônes sociales */
+    font-size: 24px;/* Taille de la police pour les icônes sociales */
+}
+
+/* Add these styles to your existing CSS */
+
+/* Navbar responsiveness */
+@media (max-width: 991px) {
+    .navbar .navbar-collapse {
+        background-color: var(--color-base); /* Set background color for the collapsed navbar */
+    }
+
+    .navbar .navbar-toggler {
+        border-color: var(--color-brand); /* Set border color for the navbar toggler */
+    }
+}
+
+/* Card responsiveness */
+@media (max-width: 767px) {
+    .card-custom {
+        margin-bottom: 30px; /* Adjust margin for smaller screens */
+    }
+
+    .card-custom .card-custom-image img {
+        transform: scale(1); /* Reset the zoom effect on smaller screens */
+    }
+}
+
+/* General responsiveness */
+@media (max-width: 575px) {
+    .navbar .navbar-brand img {
+        border: none; /* Remove border around the image for smaller screens */
+    }
+
+    #content-wrapper {
+        padding-left: 0; /* Reset padding for content wrapper on smaller screens */
+    }
+}
